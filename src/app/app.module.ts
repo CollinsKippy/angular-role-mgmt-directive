@@ -8,12 +8,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MatCardModule } from '@angular/material/card';
 import { RoleService } from './role.service';
 import { HasRoleDirective } from './has-role.directive';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     MatCardModule,
+    MatButtonModule,
     NavbarComponent,
     HasRoleDirective,
   ],
