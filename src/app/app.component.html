@@ -5,9 +5,9 @@
 
   <hr />
 
-  <ng-container *ngFor="let button of buttonList">
-    <button mat-raised-button (click)="onSelectRole(button.role)">
-      {{ button.name }}
+  <ng-container *ngFor="let role of roleList">
+    <button mat-raised-button (click)="onSelectRole(role)">
+      {{ role.name }}
     </button>
   </ng-container>
 
