@@ -21,13 +21,16 @@ export class HasRoleDirective {
       .pipe(catchError((err) => of(err)))
       .subscribe({
         next: (role: Role[]) => {
-          console.log(role);
-          role.some((r) => userRoles.some((uRole) => uRole === r))
-            ? this.viewContainerRef.createEmbeddedView(this.templateRef)
-            : this.viewContainerRef.clear();
+          if (role.some((r) => userRoles.some((uRole) => uRole === r))) {
+            this.viewContainerRef.clear();
+            this.viewContainerRef.createEmbeddedView(this.templateRef);
+          } else {
+            this.viewContainerRef.clear();
+          }
         },
         error: (err) => {
           console.log(err);
+          this.viewContainerRef.clear();
         },
       });
   }
