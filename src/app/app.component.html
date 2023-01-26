@@ -14,9 +14,11 @@
   <hr />
 
   <ng-container *ngFor="let content of contentList">
-    <mat-card>
-      <mat-card-header> {{ content?.name }} Only </mat-card-header>
-      <mat-card-content> All the content provided </mat-card-content>
-    </mat-card>
+    <ng-template [hasRole]="content.roles">
+      <mat-card>
+        <mat-card-header> {{ content?.name }} Only </mat-card-header>
+        <mat-card-content> All the content provided </mat-card-content>
+      </mat-card>
+    </ng-template>
   </ng-container>
 </div>

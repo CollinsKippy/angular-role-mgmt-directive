@@ -2,17 +2,12 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class RoleService {
-  _roleName: string | undefined;
+  private _roleSubject = Subject<string | undefined>();
+  public readonly currentRole$ = this._roleSubject.asObservable();
 
   constructor() {}
 
-  getRole() {
-    this._roleName = sessionStorage.get('role');
-    return this._roleName;
-  }
-
-  setRole(roleName: string) {
-    this._roleName = roleName;
-    sessionStorage.set('role', this._roleName);
+  updateRole(roleName: string) {
+    this._roleSubject.next(roleName);
   }
 }
