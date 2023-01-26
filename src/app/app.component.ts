@@ -1,4 +1,5 @@
 import { Component, VERSION } from '@angular/core';
+import { RoleService } from './role.service';
 
 export type Role =
   | 'ADMIN'
@@ -42,8 +43,10 @@ export class AppComponent {
     { roles: ['PUBLIC'], name: 'For Public Eyes' },
   ];
 
+  constructor(private roleService: RoleService) {}
+
   onSelectRole(role: { name: string; roles: Role[] | null }) {
     console.log({ role });
-    
+    this.roleService.updateRole(role.name);
   }
 }
