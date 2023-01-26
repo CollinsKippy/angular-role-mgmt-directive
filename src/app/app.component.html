@@ -13,9 +13,9 @@
 
   <hr />
 
-  <ng-container *ngFor="let card of cardList">
+  <ng-container *ngFor="let content of contentList">
     <mat-card>
-      <mat-card-header> {{ card }} Only </mat-card-header>
+      <mat-card-header> {{ content?.name }} Only </mat-card-header>
       <mat-card-content> All the content provided </mat-card-content>
     </mat-card>
   </ng-container>

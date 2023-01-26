@@ -32,17 +32,18 @@ export class AppComponent {
     { name: 'Public', roles: ['PUBLIC'] },
   ];
 
-  cardList: string[] = [
-    'For Admin Eyes',
-    'For Manager Eyes',
-    'For Reader Eyes',
-    'For Writer Eyes',
-    'For Reader and Writer Eyes',
-    'For Client Eyes',
-    'For Public Eyes',
+  contentList: { name: string; roles: Role[] }[] = [
+    { roles: ['ADMIN'], name: 'For Admin Eyes' },
+    { roles: ['MANAGER'], name: 'For Manager Eyes' },
+    { roles: ['READER'], name: 'For Reader Eyes' },
+    { roles: ['WRITER'], name: 'For Writer Eyes' },
+    { roles: ['READER', 'WRITER'], name: 'For Reader and Writer Eyes' },
+    { roles: ['CLIENT'], name: 'For Client Eyes' },
+    { roles: ['PUBLIC'], name: 'For Public Eyes' },
   ];
 
   onSelectRole(role: { name: string; roles: Role[] | null }) {
     console.log({ role });
+    
   }
 }
