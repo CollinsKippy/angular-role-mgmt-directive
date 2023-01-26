@@ -1,4 +1,10 @@
-import { Directive, TemplateRef, Input, ViewContainerRef } from '@angular/core';
+import {
+  Directive,
+  TemplateRef,
+  Input,
+  ViewContainerRef,
+  Renderer2,
+} from '@angular/core';
 import { catchError, of, Subscription, throwError } from 'rxjs';
 import { Role } from './app.component';
 import { RoleService } from './role.service';
@@ -13,7 +19,8 @@ export class HasRoleDirective {
   constructor(
     private roleService: RoleService,
     private templateRef: TemplateRef<unknown>,
-    private viewContainerRef: ViewContainerRef
+    private viewContainerRef: ViewContainerRef,
+    private renderer: Renderer2
   ) {}
 
   @Input() set hasRole(userRoles: Role[]) {
@@ -22,6 +29,7 @@ export class HasRoleDirective {
       .subscribe({
         next: (role: Role[]) => {
           if (role.some((r) => userRoles.some((uRole) => uRole === r))) {
+            console.log(this.templateRef.elementRef);
             this.viewContainerRef.clear();
             this.viewContainerRef.createEmbeddedView(this.templateRef);
           } else {
