@@ -1,6 +1,6 @@
 /* Add application styles & imports to this file! */
 @import '@angular/material/prebuilt-themes/pink-bluegrey.css';
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 
 body {
   font-family: 'Poppins', sans-serif;
