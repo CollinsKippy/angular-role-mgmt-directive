@@ -1,10 +1,13 @@
 import { Directive } from '@angular/core';
+import { RoleService } from './role.service';
 
 @Directive({
-  selector: '[appHasRole]'
+  selector: '[hasRole]',
 })
 export class HasRoleDirective {
+  constructor(private roleService: RoleService, private templateRef: TemplateRef<unknown>) {}
 
-  constructor() { }
+  @Input() set hasRole(roles: Role[]) {
 
+  }
 }

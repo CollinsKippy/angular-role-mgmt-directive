@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class RoleService {
-  private _roleSubject = Subject<string | undefined>();
+  private _roleSubject = new Subject<string | undefined>();
   public readonly currentRole$ = this._roleSubject.asObservable();
 
   constructor() {}
