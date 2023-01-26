@@ -26,6 +26,16 @@ export class AppComponent {
     { name: 'Public', role: undefined },
   ];
 
+  cardList: string[] = [
+    'For Admin Eyes',
+    'For Manager Eyes',
+    'For Reader Eyes',
+    'For Writer Eyes',
+    'For Reader and Writer Eyes',
+    'For Client Eyes',
+    'For Public Eyes',
+  ];
+
   onSelectRole(role: Role) {
     console.log(role);
   }

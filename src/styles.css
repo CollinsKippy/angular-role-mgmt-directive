@@ -1,6 +1,11 @@
 /* Add application styles & imports to this file! */
 @import '@angular/material/prebuilt-themes/pink-bluegrey.css';
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 html,
 body,
 h1,
@@ -15,4 +20,8 @@ button,
 a,
 div {
   font-family: 'Poppins', sans-serif !important;
+}
+
+.container {
+  padding: 1rem;
 }

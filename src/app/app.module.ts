@@ -5,9 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, NavbarComponent],
+  imports: [BrowserModule, FormsModule, MatCardModule, NavbarComponent],
   declarations: [AppComponent, HelloComponent],
   bootstrap: [AppComponent],
 })

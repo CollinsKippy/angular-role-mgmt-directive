@@ -1,11 +1,22 @@
 <app-navbar></app-navbar>
 
-<h4>Select your role:</h4>
+<div class="container">
+  <h4>Select your role:</h4>
 
-<hr />
+  <hr />
 
-<ng-container *ngFor="let button of buttonList">
-  <button mat-raised-button (click)="onSelectRole(button.role)">
-    {{ button.name }}
-  </button>
-</ng-container>
+  <ng-container *ngFor="let button of buttonList">
+    <button mat-raised-button (click)="onSelectRole(button.role)">
+      {{ button.name }}
+    </button>
+  </ng-container>
+
+  <hr />
+
+  <ng-container *ngFor="let card of cardList">
+    <mat-card>
+      <mat-card-header> {{ card }} Only </mat-card-header>
+      <mat-card-content> All the content provided </mat-card-content>
+    </mat-card>
+  </ng-container>
+</div>
