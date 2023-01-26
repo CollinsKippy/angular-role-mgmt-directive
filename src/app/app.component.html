@@ -1,2 +1,11 @@
 <app-navbar></app-navbar>
-<p>Start editing to see some magic happen :)</p>
+
+<h4>Select your role:</h4>
+
+<hr />
+
+<ng-container *ngFor="let button of buttonList">
+  <button mat-raised-button (click)="onSelectRole(button.role)">
+    {{ button.name }}
+  </button>
+</ng-container>

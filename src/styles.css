@@ -1,7 +1,18 @@
 /* Add application styles & imports to this file! */
 @import '@angular/material/prebuilt-themes/pink-bluegrey.css';
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 
-body {
-  font-family: 'Poppins', sans-serif;
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+button,
+a,
+div {
+  font-family: 'Poppins', sans-serif !important;
 }
