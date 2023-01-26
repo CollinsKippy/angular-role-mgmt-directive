@@ -4,6 +4,7 @@ import {
   Input,
   ViewContainerRef,
   Renderer2,
+  OnDestroy,
 } from '@angular/core';
 import { catchError, of, Subscription, throwError } from 'rxjs';
 import { Role } from './app.component';
@@ -13,7 +14,7 @@ import { RoleService } from './role.service';
   selector: '[hasRole]',
   standalone: true,
 })
-export class HasRoleDirective {
+export class HasRoleDirective implements OnDestroy {
   sub: Subscription;
 
   constructor(
@@ -41,5 +42,11 @@ export class HasRoleDirective {
           this.viewContainerRef.clear();
         },
       });
+  }
+
+  ngOnDestroy() {
+    if (this.sub) {
+      this.sub.unsubscribe();
+    }
   }
 }
