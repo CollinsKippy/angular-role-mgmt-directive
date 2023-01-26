@@ -11,7 +11,7 @@ export type Role =
 
 export interface User {
   name: string;
-  isAdmin: boolean;
+  isAdmin?: boolean;
   roles: Role[];
 }
 
@@ -47,6 +47,6 @@ export class AppComponent {
 
   onSelectRole(role: { name: string; roles: Role[] | null }) {
     console.log({ role });
-    this.roleService.updateRole(role.name);
+    this.roleService.updateRole(role.roles);
   }
 }

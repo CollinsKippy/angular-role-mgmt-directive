@@ -16,17 +16,15 @@ export class HasRoleDirective {
     private viewContainerRef: ViewContainerRef
   ) {}
 
-  @Input() set hasRole(roleName: string) {
+  @Input() set hasRole(userRoles: Role[]) {
     this.sub = this.roleService.currentRole$
       .pipe(catchError((err) => of(err)))
       .subscribe({
-        next: (role) => {
-          this.viewContainerRef.clear();
-
-          if (roleName === role) {
-            // Create the template
-            this.viewContainerRef.createEmbeddedView(this.templateRef);
-          }
+        next: (role: Role[]) => {
+          console.log(role);
+          role.some((r) => userRoles.some((uRole) => uRole === r))
+            ? this.viewContainerRef.createEmbeddedView(this.templateRef)
+            : this.viewContainerRef.clear();
         },
         error: (err) => {
           console.log(err);
