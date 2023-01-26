@@ -30,7 +30,7 @@ export class HasRoleDirective implements OnDestroy {
       .subscribe({
         next: (role: Role[]) => {
           if (role.some((r) => userRoles.some((uRole) => uRole === r))) {
-            console.log(this.templateRef.elementRef);
+            console.log(role);
             this.viewContainerRef.clear();
             this.viewContainerRef.createEmbeddedView(this.templateRef);
           } else {

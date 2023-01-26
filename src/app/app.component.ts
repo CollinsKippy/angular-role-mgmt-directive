@@ -28,7 +28,6 @@ export class AppComponent {
     { name: 'Manager', roles: ['MANAGER'] },
     { name: 'Reader', roles: ['READER'] },
     { name: 'Writer', roles: ['WRITER'] },
-    { name: 'Reader or Writer', roles: ['READER', 'WRITER'] },
     { name: 'Client', roles: ['CLIENT'] },
     { name: 'Public', roles: ['PUBLIC'] },
   ];
